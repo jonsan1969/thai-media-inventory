@@ -1,0 +1,44 @@
+[scanner]
+; One root per line. Quotes are optional.
+roots =
+    D:\ThaiMovies
+
+; Leave blank to create Thai_Media_Inventory_YYYY-MM-DD.xlsx next to the script.
+output =
+
+; Leave blank if ffprobe.exe is next to the script or is on PATH.
+ffprobe =
+
+; candidates = quick/full hashing only where file sizes collide
+; all        = hash every file
+; none       = no binary duplicate detection
+hash_mode = candidates
+
+[tmdb]
+; TMDb is opt-in. Local Film Records and Title Aliases are built even when disabled.
+enabled = false
+
+; Preferred: leave credentials blank here and set environment variable
+; TMDB_ACCESS_TOKEN to your TMDb API Read Access Token.
+access_token =
+
+; Alternative v3 authentication. Environment variable TMDB_API_KEY also works.
+api_key =
+
+; English metadata/title presentation. Original title/language remain available separately.
+language = en-US
+
+; Separate cache so deleting .thai_media_inventory.sqlite does not cause needless API calls.
+; Leave blank for .thai_media_tmdb.sqlite next to the script.
+cache =
+cache_ttl_days = 30
+
+; Number of top search candidates to enrich with details/aliases/external IDs/credits.
+max_candidates = 3
+
+; Only candidates above BOTH thresholds become HIGH_CONFIDENCE.
+; Everything uncertain goes to the TMDb Review sheet instead.
+auto_match_score = 90
+auto_match_margin = 8
+
+timeout = 20

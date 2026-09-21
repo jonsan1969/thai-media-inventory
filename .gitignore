@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local scanner configuration / secrets
+thai_media_inventory.ini
+.env
+
+# Scanner caches
+.thai_media_inventory.sqlite
+.thai_media_inventory.sqlite-*
+.thai_media_tmdb.sqlite
+.thai_media_tmdb.sqlite-*
+
+# Generated reports
+Thai_Media_Inventory_*.xlsx
+
+# Local binaries / logs
+ffprobe.exe
+ffprobe
+*.log
